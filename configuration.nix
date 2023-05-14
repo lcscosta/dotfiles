@@ -89,6 +89,9 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      vscode.fhs
+      neovim
+      lazygit
     #  thunderbird
     ];
   };
