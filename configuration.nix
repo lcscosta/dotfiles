@@ -13,7 +13,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -29,7 +28,7 @@
   time.timeZone = "America/Sao_Paulo";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "pt_BR.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_BR.UTF-8";
@@ -49,6 +48,9 @@
   # Enable the Pantheon Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.pantheon.enable = true;
+
+  # Enable the Flakes feature and the accompanying new nix command-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure keymap in X11
   services.xserver = {
@@ -83,15 +85,12 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lcscosta = {
+  users.users.lucasdacosta = {
     isNormalUser = true;
     description = "Lucas da Costa";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      vscode.fhs
-      neovim
-      lazygit
     #  thunderbird
     ];
   };
@@ -103,8 +102,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      git
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     wget
+     curl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -132,6 +132,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
