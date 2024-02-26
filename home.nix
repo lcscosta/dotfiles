@@ -19,6 +19,7 @@
     
     # text editors
     vscodium-fhs
+    neovim
     emacs
 
     # terminals
@@ -31,6 +32,11 @@
     # Cloud / Storage
     nextcloud-client
     zotero
+    joplin-desktop
+
+    # office
+    onlyoffice-bin
+    libreoffice
 
     # pdf viewers
     zathura
