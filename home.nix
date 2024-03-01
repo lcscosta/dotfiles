@@ -35,6 +35,7 @@
     joplin-desktop
 
     # office
+    gnome.gnome-calendar
     onlyoffice-bin
     libreoffice
 
