@@ -32,7 +32,10 @@
     # Cloud / Storage
     nextcloud-client
     zotero
+
+    # Note taking
     joplin-desktop
+    obsidian
 
     # office
     gnome.gnome-calendar
